@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save From Net Modern</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Save From Net - YouTube Downloader</h1>
+        <form id="download-form" method="POST">
+            <input type="text" name="url" placeholder="Paste YouTube URL" required>
+            <label><input type="checkbox" name="audio_only"> Audio Only (MP3)</label>
+            <button type="submit">Download</button>
+        </form>
+
+        <div class="progress-container" id="progress-container" style="display:none;">
+            <div class="progress-bar" id="progress-bar">0%</div>
+        </div>
+
+        <p class="success" id="download-link"></p>
+        <p class="error" id="error-msg"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
